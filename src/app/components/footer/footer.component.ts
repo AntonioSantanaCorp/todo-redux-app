@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
     <!-- Change this out with your name and url ↓ -->
     <p>Created by <a href="http://todomvc.com">you</a></p>
     <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+    <p>Creado en Angular por Samuel Antonio Santana Rivera</p>
   </footer>`,
 })
 export class FooterComponent {}

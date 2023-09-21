@@ -1,6 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-
-export type filtrosValidos = 'todos' | 'completados' | 'pendientes';
+import { filtrosValidos } from '../../types/main.type';
 
 export const setFiltro = createAction(
   '[Filtro] Set Filtro',

@@ -12,7 +12,7 @@ import { borrar, editar, toggle } from '../../core/store/todos/todo.actions';
   template: `
     <ul class="todo-list">
       <todo-item
-        *ngFor="let todo of todos$ | async"
+        *ngFor="let todo of todos$ | async | filtro : (filtroActual$ | async)"
         [todo]="todo"
         (toggleCompletado)="onToggleCompletado($event)"
         (editarTodo)="onEditarTodo($event)"
@@ -28,6 +28,8 @@ export class TodoListComponent {
 
   protected todos$ = this.store.select('todos');
 
+  protected filtroActual$ = this.store.select('filtro');
+
   onToggleCompletado(id: number) {
     this.store.dispatch(toggle({ id }));
   }
@@ -35,7 +37,7 @@ export class TodoListComponent {
   onEditarTodo(todo: Partial<Todo>) {
     this.store.dispatch(editar({ id: todo.id!, texto: todo.texto! }));
   }
-  
+
   onBorrarTodo(id: number) {
     this.store.dispatch(borrar({ id }));
   }

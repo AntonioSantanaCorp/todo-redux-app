@@ -7,6 +7,7 @@ import { TodoListComponent } from './containers/todo-list/todo-list.component';
 import { TodoPageComponent } from './components/todo-page/todo-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TodoToggleAllComponent } from './containers/todo-toggle-all/todo-toggle-all.component';
+import { FiltroPipe } from './pipes/filtro.pipe';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { TodoToggleAllComponent } from './containers/todo-toggle-all/todo-toggle
     TodoListComponent,
     TodoPageComponent,
     TodoToggleAllComponent,
+    FiltroPipe,
   ],
   imports: [CommonModule, ReactiveFormsModule],
   exports: [TodoPageComponent],

@@ -3,6 +3,7 @@ import {
   borrar,
   crear,
   editar,
+  limpiarTodos,
   toggle,
   toggleAll,
 } from './todo.actions';
@@ -30,5 +31,6 @@ export const todoReducer = createReducer(
   on(borrar, (state, { id }) => state.filter((todo) => todo.id !== id)),
   on(toggleAll, (state, { completado }) =>
     state.map((todo) => todo.set('completado', completado))
-  )
+  ),
+  on(limpiarTodos, (state) => state.filter(({ completado }) => !completado))
 );
